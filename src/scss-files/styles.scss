@@ -1,0 +1,258 @@
+@import "_all-va-bles.scss";
+@import "_null.scss";
+
+html {
+  background: url("./img/Pattern.png") #191918;
+}
+
+.wrapper {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 36px;
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+  margin-top: 50px;
+}
+.cards-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 65px;
+  &__pos {
+    margin-top: 25px;
+  }
+
+  &__card {
+    flex: 0 1 320px;
+    margin: 25px 25px 25px 25px;
+  }
+}
+
+.card {
+  background: url("./img/Back.png");
+  background-size: 320px 475px;
+  width: 320px;
+  height: 475px;
+
+  &__content {
+    padding: 25px 0 0 50px;
+  }
+
+  &__pretitle {
+    font-size: 16px;
+    // font-family: "Trebuchet MS";
+    color: rgb(102, 102, 102);
+    line-height: 1.2;
+    text-align: left;
+  }
+  &__pretitle2 {
+    color: rgb(230, 46, 122);
+  }
+  &__title {
+    font-size: 48px;
+    // font-family: "Trebuchet MS";
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  &__title-with {
+    font-size: 24px;
+    // font-family: "Trebuchet MS";
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-size: 14px;
+    // font-family: "Trebuchet MS";
+    color: rgb(102, 102, 102);
+    font-weight: bold;
+    line-height: 1.143;
+    text-align: left;
+  }
+}
+.color-border {
+  width: 320px;
+  height: 475px;
+  border-radius: 10px;
+  border-width: 0 4px 4px 0;
+  border-color: rgb(22, 152, 217);
+  border-style: solid;
+  position: relative;
+  &::after {
+    content: "";
+    width: 278px;
+    border-radius: 0 10px 0 0;
+    height: 40px;
+    border-width: 4px 4px 0 0;
+    border-color: rgb(22, 152, 217);
+    border-style: solid;
+    position: absolute;
+    top: 0px;
+    right: -4px;
+  }
+  &::before {
+    content: "";
+    width: 40px;
+    border-radius: 0 0 0 10px;
+    height: 433px;
+    border-width: 0 0 0 4px;
+    border-color: rgb(22, 152, 217);
+    border-style: solid;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+  }
+  &__triangle {
+    width: 60px;
+    height: 4px;
+    border-color: rgb(22, 152, 217);
+    border-style: solid;
+    border-width: 0 0 4px 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 20.5px;
+    left: -7.5px;
+  }
+}
+.card-default-hover {
+  .color-border {
+    border-color: rgb(46, 168, 230);
+    &::after {
+      border-color: rgb(46, 168, 230);
+    }
+    &::before {
+      border-color: rgb(46, 168, 230);
+    }
+    &__triangle {
+      border-color: rgb(46, 168, 230);
+    }
+  }
+  .card__weight-pack {
+    background-color: rgb(46, 168, 230);
+  }
+}
+.card-selected {
+  .color-border {
+    border-color: rgb(217, 22, 103);
+    &::after {
+      border-color: rgb(217, 22, 103);
+    }
+    &::before {
+      border-color: rgb(217, 22, 103);
+    }
+
+    &__triangle {
+      border-color: rgb(217, 22, 103);
+    }
+  }
+  .card__weight-pack {
+    background-color: rgb(217, 22, 103);
+  }
+}
+.card-selected-hover {
+  .color-border {
+    border-color: rgb(230, 46, 122);
+    &::after {
+      border-color: rgb(230, 46, 122);
+    }
+    &::before {
+      border-color: rgb(230, 46, 122);
+    }
+    &__triangle {
+      border-color: rgb(230, 46, 122);
+    }
+  }
+  .card__weight-pack {
+    background-color: rgb(230, 46, 122);
+  }
+}
+.card-disable {
+  .color-border {
+    border-color: rgb(179, 179, 179);
+    &::after {
+      border-color: rgb(179, 179, 179);
+    }
+    &::before {
+      border-color: rgb(179, 179, 179);
+    }
+    &__triangle {
+      border-color: rgb(179, 179, 179);
+    }
+  }
+  .card__weight-pack {
+    background-color: rgb(179, 179, 179);
+  }
+  .card__content > p {
+    color: rgba(179, 179, 179, 0.502);
+  }
+}
+.weight-pack {
+  border-radius: 50%;
+  background-color: rgb(22, 152, 217);
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 81px;
+  height: 81px;
+
+  &__num {
+    font-size: 42px;
+    // font-family: "Trebuchet MS";
+    color: rgb(255, 255, 255);
+    text-align: center;
+    &:first-child {
+      letter-spacing: -2px;
+      padding-top: 15px;
+      margin-bottom: -2px;
+    }
+  }
+
+  &__measure {
+    font-size: 20px;
+  }
+}
+.appeal-block {
+  text-align: center;
+  margin-top: 15px;
+  &__appeal {
+    font-size: 13px;
+    // font-family: "Trebuchet MS";
+    color: rgb(255, 255, 255);
+    line-height: 1.231;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+  }
+  &__appeal-link {
+    color: rgb(22, 152, 217);
+    border-bottom: 1px dashed rgb(22, 152, 217);
+    // text-decoration: underline dotted;
+    cursor: pointer;
+  }
+
+  &__appeal2 {
+    font-size: 13px;
+    // font-family: "Trebuchet MS";
+    color: rgb(255, 255, 102);
+    line-height: 1.231;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+  }
+}
+.displ-none {
+  display: none;
+}
+
+.js-change-text {
+}
