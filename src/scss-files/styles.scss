@@ -6,9 +6,10 @@ html {
 }
 
 .wrapper {
-  max-width: 1140px;
-  padding: 0 15px;
-  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
@@ -17,28 +18,28 @@ html {
   line-height: 1.2;
   text-align: center;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
-  margin-top: 50px;
 }
 .cards-block {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 65px;
+
   &__pos {
     margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   &__card {
     flex: 0 1 320px;
-    margin: 25px 25px 25px 25px;
+    margin: 40px 40px 40px 40px;
   }
 }
 
 .card {
   background: url("./img/Back.png");
-  background-size: 320px 475px;
   width: 320px;
   height: 475px;
+  border-radius: 0 0 10px 10px;
 
   &__content {
     padding: 25px 0 0 50px;
@@ -46,7 +47,7 @@ html {
 
   &__pretitle {
     font-size: 16px;
-    // font-family: "Trebuchet MS";
+    font-family: "Fira Sans", sans-serif;
     color: rgb(102, 102, 102);
     line-height: 1.2;
     text-align: left;
@@ -56,7 +57,7 @@ html {
   }
   &__title {
     font-size: 48px;
-    // font-family: "Trebuchet MS";
+    font-family: "Fira Sans", sans-serif;
     color: rgb(0, 0, 0);
     font-weight: bold;
     line-height: 1.2;
@@ -65,7 +66,7 @@ html {
 
   &__title-with {
     font-size: 24px;
-    // font-family: "Trebuchet MS";
+    font-family: "Fira Sans", sans-serif;
     color: rgb(0, 0, 0);
     font-weight: bold;
     line-height: 1.2;
@@ -75,7 +76,7 @@ html {
 
   &__text {
     font-size: 14px;
-    // font-family: "Trebuchet MS";
+    font-family: "Fira Sans", sans-serif;
     color: rgb(102, 102, 102);
     font-weight: bold;
     line-height: 1.143;
@@ -83,8 +84,8 @@ html {
   }
 }
 .color-border {
-  width: 320px;
-  height: 475px;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   border-width: 0 4px 4px 0;
   border-color: rgb(22, 152, 217);
@@ -92,7 +93,7 @@ html {
   position: relative;
   &::after {
     content: "";
-    width: 278px;
+    width: 88%;
     border-radius: 0 10px 0 0;
     height: 40px;
     border-width: 4px 4px 0 0;
@@ -106,7 +107,7 @@ html {
     content: "";
     width: 40px;
     border-radius: 0 0 0 10px;
-    height: 433px;
+    height: 92%;
     border-width: 0 0 0 4px;
     border-color: rgb(22, 152, 217);
     border-style: solid;
@@ -209,13 +210,12 @@ html {
 
   &__num {
     font-size: 42px;
-    // font-family: "Trebuchet MS";
+    font-family: "Fira Sans", sans-serif;
     color: rgb(255, 255, 255);
     text-align: center;
     &:first-child {
-      letter-spacing: -2px;
       padding-top: 15px;
-      margin-bottom: -2px;
+      margin-bottom: -3px;
     }
   }
 
@@ -228,7 +228,7 @@ html {
   margin-top: 15px;
   &__appeal {
     font-size: 13px;
-    // font-family: "Trebuchet MS";
+    font-family: "Fira Sans", sans-serif;
     color: rgb(255, 255, 255);
     line-height: 1.231;
     text-align: center;
@@ -243,7 +243,7 @@ html {
 
   &__appeal2 {
     font-size: 13px;
-    // font-family: "Trebuchet MS";
+    font-family: "Fira Sans", sans-serif;
     color: rgb(255, 255, 102);
     line-height: 1.231;
     text-align: center;
@@ -254,5 +254,5 @@ html {
   display: none;
 }
 
-.js-change-text {
-}
+
+  

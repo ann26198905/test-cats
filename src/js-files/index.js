@@ -1,42 +1,56 @@
-$(document).ready(function() {
-    //изменение цвета ссылок меню и цвета svg
-    $(".header__link").on('click', function () {
-        $(".header__link").removeClass("header__link_active");
-        $(this).toggleClass("header__link_active");
-        $(".header__link>.svg").removeClass("svg-active");
-        $(".header__link_active>.svg").toggleClass("svg-active");
-    });  
+$(document).ready(function () {
+    // Disable card
+  $(".card").filter(".card-disable").css("background", 'url("./img/Photo.png")');
+  $(".js-card-block").filter(".card-disable").children(".js-appeal-block1").addClass("displ-none");
+  $(".js-card-block").filter(".card-disable").children(".js-appeal-block2").addClass("displ-none");
+  $(".js-card-block").filter(".card-disable").children(".js-appeal-block3").removeClass("displ-none");
 
-    //hide and show popup
-    $(".js-popup").on('click', function () {
-        $('.js-hidden-block').removeClass('hide');
-    });
+  // Hover card
+  $(".js-card").mouseleave(function () {
+    if (!$(this).parent(".js-card-block").hasClass("card-default-hover")) {
+      $(this).parent(".js-card-block").addClass("card-default-hover");
+    }
+    if ($(this).parent(".js-card-block").hasClass("card-selected")) {
+      $(this).parent(".js-card-block").addClass("card-selected-hover");
+      $(this).find(".js-change-p").addClass("displ-none");
+      $(this).find(".js-change-p2").removeClass("displ-none");
+    }
+    if ($(this).parent(".js-card-block").hasClass("card-disable")) {
+      $(this).parent(".js-card-block").removeClass("card-selected");
+      $(this).parent(".js-card-block").removeClass("card-default-hover");
+      $(this).parent(".js-card-block").removeClass("card-selected-hover");
+      $(this).find(".js-change-p").removeClass("displ-none");
+      $(this).find(".js-change-p2").addClass("displ-none");
+    }
+  });
 
-    $('.js-close').mouseup(function() {
-        $('.js-hidden-block').addClass('hide');
-    });
-    
-    $('.popup__close').mouseup(function() {
-        $('.js-hidden-block').addClass('hide');
-    });
-    
- 
-    $(document).keyup(function(e) {
-        if (e.keyCode === 27) { 
-            $('.js-hidden-block').addClass('hide');
-        }
-    });
+  $(".js-card").mouseenter(function () {
+    if ($(this).parent(".js-card-block").hasClass("card-default-hover")) {
+      $(this).parent(".js-card-block").removeClass("card-default-hover");
+      $(this).find(".js-change-p").removeClass("displ-none");
+      $(this).find(".js-change-p2").addClass("displ-none");
+    }
+    if ($(this).parent(".js-card-block").hasClass("card-selected-hover")) {
+      $(this).parent(".js-card-block").removeClass("card-selected-hover");
+    }
+  });
 
-    //hide and show pictures-popup
-    $(".js-block-popup").on('click', function () {
-        $('.js-pictures-popup').removeClass('hide');
-    });
+  // Select card
+  $(".js-card-block").on("click", function () {
+    $(this).toggleClass("card-selected");
+    $(this).children(".js-appeal-block1").toggleClass("displ-none");
+    $(this).children(".js-appeal-block2").toggleClass("displ-none");
+    // Disable card
+    if ($(this).hasClass("card-disable")) {
+      $(this).removeClass("card-selected");
+      $(this).removeClass("card-default-hover");
 
-    $('body').mouseup(function() {
-        $('.js-pictures-popup').addClass('hide');
-        });
- 
-    $('body').keyup(function() {
-        $('.js-pictures-popup').addClass('hide');
-    });
+    }
+  });
+  $(".js-link").on("click", function () {
+    $(this).toggleClass("card-selected");
+    $(this).children(".js-appeal-block1").toggleClass("displ-none");
+    $(this).children(".js-appeal-block2").toggleClass("displ-none");
+  });
+
 });
