@@ -72,10 +72,13 @@ html {
   background: url("./img/Pattern.png") #191918; }
 
 .wrapper {
-  display: grid;
-  place-items: center;
+  height: 100%;
   width: 100%;
-  height: 100%; }
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .wrapper__block {
+    width: 100%; }
 
 .title {
   font-size: 36px;
@@ -92,7 +95,7 @@ html {
     margin-top: 25px;
     margin-bottom: 25px; }
   .cards-block__card {
-    flex: 0 1 320px;
+    flex: 0 0 320px;
     margin: 40px 40px 40px 40px; }
 
 .card {
